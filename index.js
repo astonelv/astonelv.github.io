@@ -52,7 +52,8 @@ function check(e) {
             result.innerText = 'Congrats!';
             randomWord(); // resets the game
         } else if(maxGuesses < 1) {
-            result.innerText = 'Close! Try Again!'
+            result.innerText = 'Close! Try Again!';
+            randomWord();
             for(let i = 0; i < word.length; i++) {
                 //show letters in the input
                 inputs.querySelector("input")[i].value = word[i];
