@@ -8,6 +8,7 @@ The web game is deployed at ______astonelv.github.io____________ (YOUR DEPLOYED 
 
 ## Game Logic
 
-The game is fairly straight forward. The player is given a hint and then must select the letters of the word they think it is from there. Then using the wrong letter, they can filter through and find the correct word.
+Using the hint given the player must guess the word. 
+Wrong Letters will be displayed below and the game will reset upon both completion or failure.
 
 
