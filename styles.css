@@ -12,7 +12,7 @@ body {
 }
 .wrapper h1{
     text-align: center;
-    font-size: 25px;
+    font-size: 25px; 
     font-weight: 500;
     padding: 20px 25px;
     border-bottom: 1px solid #ccc;
@@ -30,17 +30,17 @@ body {
     z-index: -999;
 }
 .inputs input{
-    height: 60px;
-    width: 55px;
+    height: 90px;
+    width: 90px;
     margin: 4px;
-    font-size: 24px;
+    font-size: 45px;
     font-weight: 500;
     text-align: center;
     background: none;
-    border-radius: 10px;
+    border-radius: 100px;
     text-transform: uppercase;
     color: #d65108;
-    border: 1px solid #efa00b;
+    border: 3px solid #efa00b;
 }
 .content .details{
     margin: 20px 0 25px;
@@ -56,4 +56,9 @@ body {
 }
 .wrong span {
     text-transform: uppercase;
+}
+h2 {
+    color: yellow;
+    display: flex;
+    justify-content: center;
 }

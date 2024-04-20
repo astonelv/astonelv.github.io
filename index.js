@@ -4,7 +4,7 @@ hint = document.querySelector(".hint span");
 guessRemaining = document.querySelector(".guess-remaining span")
 wrong = document.querySelector(".wrong span")
 typingInput = document.querySelector(".typing-input")
-
+result = document.querySelector(".result")
 
 let word, maxGuesses, corrects = [], incorrects = [];
 
@@ -47,16 +47,18 @@ function check(e) {
     }
     typingInput.value = "";
 
-    if(corrects.length === word.length) {
-        alert(`Congrats! You've found the word ${word}`);
-        randomWord(); // resets the game
-    } else if(maxGuesses < 1) {
-        alert("Game Over! Try again!");
-        for(let i = 0; i < word.length; i++) {
-            //show letters in the input
-            inputs.querySelector("input")[i].value = word[i];
+    setTimeout(() => {
+        if(corrects.length === word.length) {
+            result.innerText = 'Congrats!';
+            randomWord(); // resets the game
+        } else if(maxGuesses < 1) {
+            result.innerText = 'Close! Try Again!'
+            for(let i = 0; i < word.length; i++) {
+                //show letters in the input
+                inputs.querySelector("input")[i].value = word[i];
+            }
         }
-    }
+    });
 }
 
 
