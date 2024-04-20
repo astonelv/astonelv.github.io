@@ -6,13 +6,13 @@ wrong = document.querySelector(".wrong span")
 typingInput = document.querySelector(".typing-input")
 
 
-let word, maxGuesses, incorrects = [];
+let word, maxGuesses, corrects = [], incorrects = [];
 
 function randomWord () {
     //getting random word from array
     let ranObj = wordList [Math.floor(Math.random() * wordList.length)];
     word = ranObj.word; //getting word of random object
-    maxGuesses = 7;
+    maxGuesses = 7; corrects = [], incorrects = [];
     console.log(ranObj);
 
     hint.innerText = ranObj.hint;
@@ -34,6 +34,7 @@ function check(e) {
         if(word.includes(key)) {
             for(let i = 0; i < word.length; i++){
                 if(word[i] === key){
+                    corrects.push(key);
                     inputs.querySelectorAll("input")[i].value = key;
                 }
             }
@@ -45,8 +46,20 @@ function check(e) {
         wrong.innerText = incorrects;
     }
     typingInput.value = "";
+
+    if(corrects.length === word.length) {
+        alert(`Congrats! You've found the word ${word}`);
+        randomWord(); // resets the game
+    } else if(maxGuesses < 1) {
+        alert("Game Over! Try again!");
+        for(let i = 0; i < word.length; i++) {
+            //show letters in the input
+            inputs.querySelector("input")[i].value = word[i];
+        }
+    }
 }
-    
+
+
 
 
 resetBtn.addEventListener("click", randomWord);
